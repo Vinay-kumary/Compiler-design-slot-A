@@ -1,0 +1,28 @@
+%{
+%}
+%%
+"https"|"ftp"[//][a-zA-Z]{3}[.][a-zA-Z]+".""com" {printf("valid URL");}
+[0-9]+ {printf("invalid URL");}
+%%
+int yywrap(void){}
+int main(){
+printf("enter : ");
+yylex();
+printf("\n");
+return 0;
+}
+
+o/p
+Microsoft Windows [Version 10.0.22621.1992]
+(c) Microsoft Corporation. All rights reserved.
+C:\Users\varad>set path=C:\Program Files (x86)\GnuWin32\bin
+
+C:\Users\varad>flex url.l.txt
+
+C:\Users\varad>set path=C:\MinGW\bin
+
+C:\Users\varad>gcc lex.yy.c
+
+C:\Users\varad>a
+enter url :http://www.saveetha.com
+valid url
